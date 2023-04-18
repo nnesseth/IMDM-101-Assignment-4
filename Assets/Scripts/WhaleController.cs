@@ -6,15 +6,23 @@ public class WhaleController : MonoBehaviour
 {
 
     [SerializeField] private Transform whale;
-    private Vector3 rotation;
+    [SerializeField] private Vector3 movement;
+    [SerializeField] private Vector3 rotation;
 
     void Start()
     {
-        whale.GetComponent("humpbbackwhale");    
+        movement.x = 0.004F;
+        rotation.y = -0.01F;
     }
     void Update()
     {
-        rotation.y += 1;
-        whale.Rotate(rotation);
+        if (GameObject.Find("WhaleDad"))
+        {
+            whale.Rotate(rotation);
+            whale.Translate(movement);
+        } else
+        {
+            Debug.Log("WhaleDad object not found.");
+        }
     }
 }
