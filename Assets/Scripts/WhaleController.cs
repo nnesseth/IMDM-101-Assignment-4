@@ -12,7 +12,7 @@ public class WhaleController : MonoBehaviour
     void Start()
     {
         movement.x = 0.004F;
-        rotation.y = -0.01F;
+        rotation.y = -0.02F;
     }
     void Update()
     {
